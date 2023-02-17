@@ -4,7 +4,7 @@ namespace SFramework.Analytics.Runtime
 {
     public class SFAnalyticsService : ISFAnalyticsService
     {
-        private List<ISFAnalyticsProvider> _analyticsServices = new List<ISFAnalyticsProvider>();
+        private List<ISFAnalyticsProvider> _analyticsServices = new();
 
         public void RegisterProvider(ISFAnalyticsProvider analyticsProvider)
         {
@@ -25,6 +25,10 @@ namespace SFramework.Analytics.Runtime
             {
                 analyticsService?.SendCustomAnalyticsEvent(customAnalyticsEventModel);
             }
+        }
+
+        public void Dispose()
+        {
         }
     }
 }
