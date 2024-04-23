@@ -6,24 +6,17 @@ namespace SFramework.Analytics.Runtime
     {
         private List<ISFAnalyticsProvider> _analyticsServices = new();
 
-        public void RegisterProvider(ISFAnalyticsProvider analyticsProvider)
+        public ISFAnalyticsService RegisterProvider(ISFAnalyticsProvider analyticsProvider)
         {
             _analyticsServices.Add(analyticsProvider);
+            return this;
         }
 
-        public void Connect(string userId = default)
+        public void SendCustomAnalyticsEvent<T>(T analyticsEvent) where T : ISFAnalyticsEvent
         {
             foreach (var analyticsService in _analyticsServices)
             {
-                analyticsService?.Connect(userId);
-            }
-        }
-
-        public void SendCustomAnalyticsEvent<T>(T customAnalyticsEventModel) where T : SFCustomAnalyticsEvent
-        {
-            foreach (var analyticsService in _analyticsServices)
-            {
-                analyticsService?.SendCustomAnalyticsEvent(customAnalyticsEventModel);
+                analyticsService?.SendCustomAnalyticsEvent(analyticsEvent);
             }
         }
 

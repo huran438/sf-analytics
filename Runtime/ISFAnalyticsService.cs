@@ -4,8 +4,7 @@ namespace SFramework.Analytics.Runtime
 {
     public interface ISFAnalyticsService : ISFService
     {
-        void RegisterProvider(ISFAnalyticsProvider analyticsProvider);
-        void Connect(string userId = default);
-        void SendCustomAnalyticsEvent<T>(T customAnalyticsEventModel) where T : SFCustomAnalyticsEvent;
+        ISFAnalyticsService RegisterProvider(ISFAnalyticsProvider analyticsProvider);
+        void SendCustomAnalyticsEvent<T>(T analyticsEvent) where T : ISFAnalyticsEvent;
     }
 }

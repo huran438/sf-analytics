@@ -3,16 +3,15 @@ using UnityEngine;
 
 namespace SFramework.Analytics.Runtime
 {
-    public class SFAnalyticsProvider : ISFAnalyticsProvider
+    public sealed class SFAnalyticsProvider : ISFAnalyticsProvider
     {
-        public void Connect(string userId)
+        public void SendCustomAnalyticsEvent(ISFAnalyticsEvent analyticsEvent)
         {
-            Debug.Log($"[ANALYTICS] - EVENT <color=yellow>CONNECTED</color>");
+            Debug.Log($"[ANALYTICS] - EVENT <color=yellow>{analyticsEvent.Id}</color> SENT");
         }
 
-        public void SendCustomAnalyticsEvent(SFCustomAnalyticsEvent sfCustomAnalyticsEvent)
+        public void Dispose()
         {
-            Debug.Log($"[ANALYTICS] - EVENT <color=yellow>{sfCustomAnalyticsEvent.Name}</color> SENT");
         }
     }
 }

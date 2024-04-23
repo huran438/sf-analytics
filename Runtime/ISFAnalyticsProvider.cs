@@ -1,10 +1,10 @@
+using System;
 using SFramework.Core.Runtime;
 
 namespace SFramework.Analytics.Runtime
 {
-    public interface ISFAnalyticsProvider
+    public interface ISFAnalyticsProvider : IDisposable
     {
-        void Connect(string userId = default);
-        void SendCustomAnalyticsEvent(SFCustomAnalyticsEvent sfCustomAnalyticsEvent);
+        void SendCustomAnalyticsEvent(ISFAnalyticsEvent analyticsEvent);
     }
 }
