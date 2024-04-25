@@ -4,6 +4,11 @@ namespace SFramework.Analytics.Runtime
 {
     public class SFAnalyticsService : ISFAnalyticsService
     {
+        SFAnalyticsService()
+        {
+            
+        }
+
         private List<ISFAnalyticsProvider> _analyticsServices = new();
 
         public ISFAnalyticsService RegisterProvider(ISFAnalyticsProvider analyticsProvider)
