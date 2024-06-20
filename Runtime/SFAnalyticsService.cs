@@ -1,12 +1,15 @@
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
+using SFramework.Core.Runtime;
 
 namespace SFramework.Analytics.Runtime
 {
     public class SFAnalyticsService : ISFAnalyticsService
     {
-        SFAnalyticsService()
+        public UniTask Init(CancellationToken cancellationToken)
         {
-            
+           return UniTask.CompletedTask;
         }
 
         private List<ISFAnalyticsProvider> _analyticsServices = new();
@@ -28,5 +31,6 @@ namespace SFramework.Analytics.Runtime
         public void Dispose()
         {
         }
+ 
     }
 }

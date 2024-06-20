@@ -1,4 +1,7 @@
 using SFramework.Core.Runtime;
+using UnityEngine.Scripting;
+
+
 
 namespace SFramework.Analytics.Runtime
 {

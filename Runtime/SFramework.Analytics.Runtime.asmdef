@@ -2,7 +2,8 @@
     "name": "SFramework.Analytics.Runtime",
     "rootNamespace": "SFramework.Analytics.Runtime",
     "references": [
-        "SFramework.Core.Runtime"
+        "SFramework.Core.Runtime",
+        "UniTask"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

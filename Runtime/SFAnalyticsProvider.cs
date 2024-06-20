@@ -7,7 +7,7 @@ namespace SFramework.Analytics.Runtime
     {
         public void SendCustomAnalyticsEvent(ISFAnalyticsEvent analyticsEvent)
         {
-            Debug.Log($"[ANALYTICS] - EVENT <color=yellow>{analyticsEvent.Id}</color> SENT");
+            SFDebug.Log("[ANALYTICS] - EVENT <color=yellow>{0}</color> SENT", analyticsEvent.Id);
         }
 
         public void Dispose()
