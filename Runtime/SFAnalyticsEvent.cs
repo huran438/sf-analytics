@@ -11,6 +11,6 @@ namespace SFramework.Analytics.Runtime
         }
 
         public abstract string Id { get; }
-        public Dictionary<string, string> Params { get; } = new();
+        public Dictionary<string, object> Params { get; } = new();
     }
 }
