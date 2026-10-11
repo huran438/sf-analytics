@@ -2,8 +2,6 @@
 
 # SF Analytics
 
-[Documentation website](https://docs.secretplace.studio/#sf-analytics)
-
 ![Package](https://img.shields.io/badge/package-sp.sframework.analytics-555555) ![Version](https://img.shields.io/badge/version-0.1.0-555555)
 
 SF Analytics sends a custom event to each provider you register with `ISFAnalyticsService`. An event contains an ID and string parameters. The included `SFAnalyticsProvider` logs the ID through `SFDebug`; your application supplies adapters for any analytics SDK or backend.
